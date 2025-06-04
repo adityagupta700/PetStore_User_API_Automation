@@ -1,6 +1,6 @@
 package api.payload;
 
-public class User {
+public class User_Payload {
 	
 	int id;
 	String username;

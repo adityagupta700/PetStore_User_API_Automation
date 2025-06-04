@@ -1,18 +1,14 @@
 package api.endpoints;
 
-import org.testng.annotations.Test;
+import static io.restassured.RestAssured.given;
 
-import api.payload.User;
-import io.restassured.http.ContentType;
+import api.payload.User_Payload;
 import io.restassured.response.Response;
-
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
 
 public class UserModel_Endpoints {
 
-	public static Response createUser(User payload) {
+	//POST request with payload
+	public static Response createUser(User_Payload payload) {
 
 		return given()
 				.header("accept", "application/json")
@@ -22,7 +18,18 @@ public class UserModel_Endpoints {
 				.when()
 				.post(Routes.create_user_endp);
 	}
+	
+	//POST request without payload
+	public static Response createUserWithoutPayload() {
 
+		return given()
+				.header("accept", "application/json")
+				.header("Content-Type", "application.json")
+
+				.when()
+				.post(Routes.create_user_endp);
+	}
+	
 	public static Response getUser(String username) {
 
 		return given()
@@ -33,7 +40,8 @@ public class UserModel_Endpoints {
 				.get(Routes.get_user_endp);
 	}
 
-	public static Response updateUser(User payload, String username) {
+	//PUT request with payload
+	public static Response updateUser(String username, User_Payload payload) {
 
 		return given()
 				.header("accept", "application/json")
@@ -45,12 +53,25 @@ public class UserModel_Endpoints {
 				.put(Routes.update_user_endp);
 	}
 	
+	
+	//PUT request without payload
+	public static Response updateUserWithoutPayload(String username) {
+
+		return given()
+				.header("accept", "application/json")
+				.header("Content-Type", "application.json")
+				.pathParam("username", username)
+
+				.when()
+				.put(Routes.update_user_endp);
+	}
+
 	public static Response deleteUser(String username) {
 
 		return given()
 				.header("accept", "application/json")
 				.pathParam("username", username)
-				
+
 				.when()
 				.delete(Routes.delete_user_endp);
 	}
