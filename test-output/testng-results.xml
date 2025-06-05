@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-06-04T18:57:36 IST" name="UserTestSuite" finished-at="2025-06-04T18:57:53 IST" duration-ms="16600">
+    <groups>
+    </groups>
+    <test started-at="2025-06-04T18:57:36 IST" name="UserTest" finished-at="2025-06-04T18:57:53 IST" duration-ms="16600">
+      <class name="api.tests.userTest.UpdateUserTests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:api.tests.userTest.UpdateUserTests@3d285d7e]" started-at="2025-06-04T18:57:46 IST" name="setup" finished-at="2025-06-04T18:57:46 IST" duration-ms="27" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="TC006()[pri:6, instance:api.tests.userTest.UpdateUserTests@3d285d7e]" started-at="2025-06-04T18:57:46 IST" name="TC006" finished-at="2025-06-04T18:57:47 IST" duration-ms="1130" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC006 -->
+        <test-method signature="TC007()[pri:7, instance:api.tests.userTest.UpdateUserTests@3d285d7e]" started-at="2025-06-04T18:57:47 IST" name="TC007" finished-at="2025-06-04T18:57:48 IST" duration-ms="1124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC007 -->
+        <test-method signature="TC008()[pri:8, instance:api.tests.userTest.UpdateUserTests@3d285d7e]" started-at="2025-06-04T18:57:48 IST" name="TC008" finished-at="2025-06-04T18:57:49 IST" duration-ms="1126" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC008 -->
+      </class> <!-- api.tests.userTest.UpdateUserTests -->
+      <class name="api.tests.userTest.CreateUserTests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:api.tests.userTest.CreateUserTests@79079097]" started-at="2025-06-04T18:57:36 IST" name="setup" finished-at="2025-06-04T18:57:36 IST" duration-ms="297" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="TC001()[pri:1, instance:api.tests.userTest.CreateUserTests@79079097]" started-at="2025-06-04T18:57:36 IST" name="TC001" finished-at="2025-06-04T18:57:41 IST" duration-ms="4411" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC001 -->
+        <test-method signature="TC002()[pri:2, instance:api.tests.userTest.CreateUserTests@79079097]" started-at="2025-06-04T18:57:41 IST" name="TC002" finished-at="2025-06-04T18:57:42 IST" duration-ms="1181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC002 -->
+      </class> <!-- api.tests.userTest.CreateUserTests -->
+      <class name="api.tests.userTest.GetUserTests">
+        <test-method signature="TC003()[pri:3, instance:api.tests.userTest.GetUserTests@302552ec]" started-at="2025-06-04T18:57:42 IST" name="TC003" finished-at="2025-06-04T18:57:43 IST" duration-ms="1415" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC003 -->
+        <test-method signature="TC004()[pri:4, instance:api.tests.userTest.GetUserTests@302552ec]" started-at="2025-06-04T18:57:43 IST" name="TC004" finished-at="2025-06-04T18:57:45 IST" duration-ms="1187" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC004 -->
+        <test-method signature="TC005()[pri:5, instance:api.tests.userTest.GetUserTests@302552ec]" started-at="2025-06-04T18:57:45 IST" name="TC005" finished-at="2025-06-04T18:57:46 IST" duration-ms="1103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC005 -->
+      </class> <!-- api.tests.userTest.GetUserTests -->
+      <class name="api.tests.userTest.DeleteUserTests">
+        <test-method signature="TC009()[pri:9, instance:api.tests.userTest.DeleteUserTests@40005471]" started-at="2025-06-04T18:57:49 IST" name="TC009" finished-at="2025-06-04T18:57:50 IST" duration-ms="1291" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC009 -->
+        <test-method signature="TC010()[pri:10, instance:api.tests.userTest.DeleteUserTests@40005471]" started-at="2025-06-04T18:57:50 IST" name="TC010" finished-at="2025-06-04T18:57:52 IST" duration-ms="1147" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC010 -->
+        <test-method signature="TC011()[pri:11, instance:api.tests.userTest.DeleteUserTests@40005471]" started-at="2025-06-04T18:57:52 IST" name="TC011" finished-at="2025-06-04T18:57:53 IST" duration-ms="1088" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC011 -->
+      </class> <!-- api.tests.userTest.DeleteUserTests -->
+    </test> <!-- UserTest -->
+  </suite> <!-- UserTestSuite -->
+</testng-results>

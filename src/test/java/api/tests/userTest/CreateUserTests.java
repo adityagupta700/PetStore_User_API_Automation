@@ -2,6 +2,7 @@ package api.tests.userTest;
 
 import static org.hamcrest.Matchers.equalTo;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
@@ -12,11 +13,11 @@ import io.restassured.response.Response;
 
 public class CreateUserTests {
 	
-	Faker faker;
+	public Faker faker;
 	public static User_Payload userPayload;
 	
-	@Test(priority = 1)
-	public void TC001() {
+	@BeforeClass
+	public void setup() {
 		faker = new Faker();
 		userPayload = new User_Payload();
 		
@@ -26,7 +27,11 @@ public class CreateUserTests {
 		userPayload.setUsername(faker.name().username());
 		userPayload.setEmail(faker.internet().safeEmailAddress());
 		userPayload.setPassword(faker.internet().password());
-		userPayload.setPhone(faker.phoneNumber().cellPhone());		
+		userPayload.setPhone(faker.phoneNumber().cellPhone());	
+	}
+	
+	@Test(priority = 1)
+	public void TC001() {
 		
 		Response res = UserModel_Endpoints.createUser(userPayload);
 		
@@ -36,8 +41,8 @@ public class CreateUserTests {
 		.statusCode(200)
 		.statusLine("HTTP/1.1 200 OK")
 		.header("Content-Type", "application/json")
-		.assertThat().body("message", equalTo(expectedUserId))
-		.log().all();
+		.body("message", equalTo(String.valueOf(expectedUserId)))
+		.log().ifValidationFails();
 		
 	}
 	
@@ -51,7 +56,7 @@ public class CreateUserTests {
 		.statusLine("HTTP/1.1 405 Method Not Allowed")
 		.header("Content-Type", "application/json")
 		.assertThat().body("message", equalTo("no data"))
-		.log().all();
+		.log().ifValidationFails();
 		
 	}
 	

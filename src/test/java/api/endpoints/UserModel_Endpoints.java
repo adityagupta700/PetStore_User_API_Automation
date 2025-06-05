@@ -3,6 +3,7 @@ package api.endpoints;
 import static io.restassured.RestAssured.given;
 
 import api.payload.User_Payload;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 public class UserModel_Endpoints {
@@ -11,8 +12,8 @@ public class UserModel_Endpoints {
 	public static Response createUser(User_Payload payload) {
 
 		return given()
-				.header("accept", "application/json")
-				.header("Content-Type", "application.json")
+				.contentType(ContentType.JSON)
+				.accept(ContentType.JSON)
 				.body(payload)
 
 				.when()
@@ -23,8 +24,8 @@ public class UserModel_Endpoints {
 	public static Response createUserWithoutPayload() {
 
 		return given()
-				.header("accept", "application/json")
-				.header("Content-Type", "application.json")
+				.contentType(ContentType.JSON)
+				.accept(ContentType.JSON)
 
 				.when()
 				.post(Routes.create_user_endp);
@@ -33,7 +34,7 @@ public class UserModel_Endpoints {
 	public static Response getUser(String username) {
 
 		return given()
-				.header("accept", "application/json")
+				.accept(ContentType.JSON)
 				.pathParam("username", username)
 
 				.when()
@@ -44,8 +45,8 @@ public class UserModel_Endpoints {
 	public static Response updateUser(String username, User_Payload payload) {
 
 		return given()
-				.header("accept", "application/json")
-				.header("Content-Type", "application.json")
+				.contentType(ContentType.JSON)
+				.accept(ContentType.JSON)
 				.pathParam("username", username)
 				.body(payload)
 
@@ -58,8 +59,8 @@ public class UserModel_Endpoints {
 	public static Response updateUserWithoutPayload(String username) {
 
 		return given()
-				.header("accept", "application/json")
-				.header("Content-Type", "application.json")
+				.contentType(ContentType.JSON)
+				.accept(ContentType.JSON)
 				.pathParam("username", username)
 
 				.when()
@@ -69,7 +70,7 @@ public class UserModel_Endpoints {
 	public static Response deleteUser(String username) {
 
 		return given()
-				.header("accept", "application/json")
+				.accept(ContentType.JSON)
 				.pathParam("username", username)
 
 				.when()

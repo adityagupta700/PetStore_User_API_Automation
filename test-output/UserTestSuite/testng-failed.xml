@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [UserTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="UserTest(failed)">
+    <classes>
+      <class name="api.tests.userTest.DeleteUserTests">
+        <methods>
+          <include name="TC011"/>
+        </methods>
+      </class> <!-- api.tests.userTest.DeleteUserTests -->
+    </classes>
+  </test> <!-- UserTest(failed) -->
+</suite> <!-- Failed suite [UserTestSuite] -->

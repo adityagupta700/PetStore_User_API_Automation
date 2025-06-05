@@ -10,38 +10,42 @@ import io.restassured.response.Response;
 
 public class GetUserTests {
 
-	@Test
+	@Test(priority = 3)
 	public void TC003() {
-		
-		Response res = UserModel_Endpoints.getUser(CreateUserTests.userPayload.getUsername());
-		
+
+		Response res = UserModel_Endpoints.getUser(CreateUserTests.userPayload.getUsername()); 
+
 		res.then()
 		.statusCode(200)
 		.statusLine("HTTP/1.1 200 OK")
 		.header("Content-Type", "application/json")
-		.assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("UserSchema"));
+		.assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("UserSchema.json"))
+		.log().all();
+
 	}
-	
-	@Test
+
+	@Test(priority = 4)
 	public void TC004() {
-		
+
 		Response res = UserModel_Endpoints.getUser("Albert_Einstein123"); // Random username
-		
+
 		res.then()
 		.statusCode(404)
 		.statusLine("HTTP/1.1 404 Not Found")
 		.header("Content-Type", "application/json")
-		.assertThat().body("message", equalTo("User not found"));
+		.assertThat().body("message", equalTo("User not found"))
+		.log().ifValidationFails();
 	}
-	
-	@Test
+
+	@Test(priority = 5)
 	public void TC005() {
-		
+
 		Response res = UserModel_Endpoints.getUser(""); // Empty String username
-		
+
 		res.then()
 		.statusCode(405)
 		.statusLine("HTTP/1.1 405 Method Not Allowed")
-		.header("Content-Type", "application/json");
+		.header("Content-Type", "application/json")
+		.log().ifValidationFails();
 	}
 }
