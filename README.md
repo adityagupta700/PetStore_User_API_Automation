@@ -11,7 +11,7 @@ This project validates the CRUD operations for user management:
 - Update User
 - Delete User
 
- Detailed Test Scenarios and Test Cases are added for the above operations in **TestScenarios_And _TC_For_UserModel.xlsx** file
+ Detailed Test Scenarios and Test Cases are added for the above operations in **TestScenarios_And _TC_For_UserModel.xlsx** file.
 
 ## Tech Stack
 
